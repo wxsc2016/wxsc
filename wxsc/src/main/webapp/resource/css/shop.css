@@ -1,0 +1,79 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+
+html { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+a img { border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+html, body { width: 100%; height: 100%; overflow-x: hidden; }
+
+body { position: relative; font-size: 14px; line-height: 20px; background: #f5f5f5; color: #484848; }
+
+img { max-width: 100%; width: 100% !important; height: 100% !important; }
+
+.font, .detail-head, .detail-head h2, .detail-head p, .detail-head .pct-price .new-p, .detail-head .pct-price .old-p { font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif; font-color: #000; }
+
+.detail-head { background: #fff; position: relative; padding: 10px; }
+.detail-head h2 { font-size: 16px; line-height: 24px; }
+.detail-head p { font-color: #a0a0a0; font-size: 12px; padding-top: 5px; }
+.detail-head .pct-price { margin-top: 10px; }
+.detail-head .pct-price .new-p { color: #f40; font-weight: bold; }
+.detail-head .pct-price span { display: inline-block; font-size: 14px; }
+.detail-head .pct-price .old-p { color: #a0a0a0; text-decoration: line-through; margin-left: 20px; }
+.detail-head div { -webkit-tap-highlight-color: transparent; }
+.detail-head .d-info { color: #969696; font-size: 12px; margin-top: 5px; }
+.detail-head .counts { position: absolute; right: 10px; bottom: 40px; }
+.detail-head .counts .b-add:after { -webkit-transform: rotate(-90deg); transform: rotate(-90deg); }
+.detail-head .counts .b-txt { background-color: tranparent; border: 0; width: 30px; display: inline-block; text-align: center; vertical-align: middle; padding: 5px 0; }
+.detail-head .counts span { position: relative; display: inline-block; width: 22px; height: 22px; border: 1px solid #dcdcdc; border-radius: 50%; vertical-align: middle; }
+.detail-head .counts span:before { content: ""; position: absolute; left: 50%; top: 50%; margin: -1px 0 0 -6px; width: 12px; height: 2px; background-color: #ff4400; }
+.detail-head .counts span:after { content: ""; position: absolute; left: 50%; top: 50%; margin: -1px 0 0 -6px; width: 12px; height: 2px; background-color: #ff4400; }
+
+.m-pro-tab { border-top: 10px solid #f5f5f5; background: #fff; }
+
+.flex { display: -webkit-flex; display: flex; }
+
+.col { -webkit-box-flex: 1; flex: 1; display: block; width: 100%; }
+
+nav { display: block; }
+
+.nav-tabs li { position: relative; text-align: center; border-bottom: 1px solid #dcdcdc; }
+.nav-tabs li.cur span { color: #66aa39; }
+.nav-tabs li.cur span:before { position: absolute; content: ""; width: 100%; height: 2px; background-color: #66aa39; left: 0; bottom: -1px; }
+.nav-tabs li:before { position: absolute; content: ""; height: 20px; width: 1px; background: #dcdcdc; right: 0; top: 50%; margin-top: -10px; }
+.nav-tabs li:last-child:before { width: 0; }
+.nav-tabs li span { position: relative; display: inline-block; padding: 8px 10px; }
+
+.m-tab-content .tab-pane { display: none; }
+.m-tab-content .tab-pane.active { display: block; }
+
+.detail-content, .detail-content p { line-height: 22px; }
+
+.detail-content { padding: 15px 10px; }
+.detail-content p { margin-bottom: 10px; }
+.detail-content p img { width: 100%; }
+.detail-content p img::last-child { margin-bottom: 0; }
+
+.detailFoot { background: #fff; height: 50px; margin: 0; padding: 0; width: 100%; }
+
+.detail-btm { position: fixed; left: 0; bottom: 0; width: 100%; background-color: #fff; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.detail-btm .goBuyCar { position: relative; display: block; margin: 5px 15px; width: 40px; height: 40px; background-color: #dcdddd; border-radius: 50%; }
+.detail-btm .goBuyCar:before { position: absolute; content: ""; width: 30px; height: 30px; left: 50%; top: 50%; background: url(../images/icon.png) no-repeat; -webkit-background-size: 100px auto; background-size: 100px auto; margin: -15px 0 0 -15px; background-position: -67px -291px; }
+.detail-btm .goBuyCar.cur { background-color: #85bb61; }
+.detail-btm .goBuyCar.cur:after { position: absolute; content: attr(data-num); left: 50%; top: 0; margin-left: 10px; width: 20px; text-align: center; border-radius: 100px; line-height: 16px; font-size: 10px; color: #fff; background-color: #ff7e35; }
+
+.dr-btm { position: relative; display: -webkit-box; display: box; }
+.dr-btm a { display: block; -webkit-box-flex: 1; box-flex: 1; line-height: 50px; font-size: 16px; text-align: center; background-color: #ff9933; text-decoration: none; color: #fff; }
+.dr-btm a:last-child { background-color: #ED3D3D; }
+
+.noComment { display: block; padding: 20px; color: #a0a0a0; text-align: center; }

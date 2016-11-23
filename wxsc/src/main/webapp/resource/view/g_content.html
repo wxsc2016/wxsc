@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 声明文档使用的字符编码 -->
+    <meta charset='utf-8'>
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 页面关键词 -->
+    <meta name="keywords" content="" />
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow" />
+    <!-- 为移动设备添加 viewport -->
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+    <!-- iOS 设备 begin -->
+    <meta name="apple-mobile-web-app-title" content="标题">
+    <!-- 添加到主屏后的标题（iOS 6 新增） -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
+    <!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari） -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telphone=no, email=no" />
+    <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 不让百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <title>购物</title>
+    <link rel="stylesheet" href="./stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="./stylesheets/shop.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 图片轮播 -->
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="row">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="images/vegetable.jpg" class="img-responsive" alt="First slide">
+                    </div>
+                    <div class="item">
+                        <img src="images/vegetable.jpg" alt="Second slide" class="img-responsive">
+                    </div>
+                    <div class="item">
+                        <img src="images/vegetable.jpg" alt="Third slide" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding: 0;">
+            <div class="detail-head">
+                <h2>白苋菜</h2>
+                <p>白苋菜</p>
+                <p class="pct-price">
+                    <span class="new-p">￥ <em>9.90</em></span>
+                    <span class="old-p">￥9.90</span>
+                </p>
+                <div class="d-info">
+                    <span>已售：15</span>
+                </div>
+                <div class="counts">
+                    <span class="b-reduce"></span>
+                    <input type="tel" name="" value="1" class="b-txt" />
+                    <span class="b-add"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding: 0;">
+            <div class="m-pro-tab">
+                <nav class="nav-tabs">
+                    <ul class="flex">
+                        <li class="col cur"><span>宝贝详情</span></li>
+                        <li class="col"><span>评价</span></li>
+                    </ul>
+                </nav>
+                <div class="m-tab-content">
+                    <div class="tab-pane active">
+                        <div class="detail-content">
+                            <p><img src="http://www.yoxyc.com/upload/img/160809191731F5y0R1.jpg"></p>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane">
+                        <div class="comment">
+                            <div class="noComment"><span>还没有评论哦~~</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detailFoot">
+            <div class="detail-btm border-t flex">
+                <span class="goBuyCar cur" data-num="0">
+                </span>
+                <div class="dr-btm col">
+                    <a class="addCar" href="javascript:void(0);">加入购物车</a>
+                    <a class="goBuging" href="javascript:;">查看购物车</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/shop.js"></script>
+</body>
+
+</html>

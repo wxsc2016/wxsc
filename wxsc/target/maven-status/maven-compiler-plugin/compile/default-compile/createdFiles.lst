@@ -1,0 +1,13 @@
+com\wxsc\util\ServletUtil.class
+com\wxsc\dao\GOODS_COMMENTMapper.class
+com\wxsc\bean\GOODS_COMMENT.class
+com\wxsc\service\ShowGoodsServiceI.class
+com\wxsc\service\Impl\ShowGoodsService.class
+com\wxsc\dao\STORE_WAREMapper.class
+com\wxsc\bean\GOODS_INFO.class
+com\wxsc\util\MyBatisUtil.class
+com\wxsc\controller\GoodsController.class
+com\wxsc\dao\DATE_SALEDMapper.class
+com\wxsc\bean\STORE_WARE.class
+com\wxsc\bean\DATE_SALED.class
+com\wxsc\dao\GOODS_INFOMapper.class

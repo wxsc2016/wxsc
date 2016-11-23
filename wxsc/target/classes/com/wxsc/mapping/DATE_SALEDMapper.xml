@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wxsc.dao.DATE_SALEDMapper" >
+  <resultMap id="BaseResultMap" type="com.wxsc.bean.DATE_SALED" >
+    <id column="goodsId" property="goodsid" jdbcType="VARCHAR" />
+    <result column="saledDate" property="saleddate" jdbcType="VARCHAR" />
+    <result column="saledQuantity" property="saledquantity" jdbcType="INTEGER" />
+    <result column="saledPrice" property="saledprice" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    goodsId, saledDate, saledQuantity, saledPrice
+  </sql>
+  
+  
+  
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from date_saled
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from date_saled
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wxsc.bean.DATE_SALED" >
+    insert into date_saled (goodsId, saledDate, saledQuantity, 
+      saledPrice)
+    values (#{goodsid,jdbcType=VARCHAR}, #{saleddate,jdbcType=VARCHAR}, #{saledquantity,jdbcType=INTEGER}, 
+      #{saledprice,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wxsc.bean.DATE_SALED" >
+    insert into date_saled
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="goodsid != null" >
+        goodsId,
+      </if>
+      <if test="saleddate != null" >
+        saledDate,
+      </if>
+      <if test="saledquantity != null" >
+        saledQuantity,
+      </if>
+      <if test="saledprice != null" >
+        saledPrice,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="goodsid != null" >
+        #{goodsid,jdbcType=VARCHAR},
+      </if>
+      <if test="saleddate != null" >
+        #{saleddate,jdbcType=VARCHAR},
+      </if>
+      <if test="saledquantity != null" >
+        #{saledquantity,jdbcType=INTEGER},
+      </if>
+      <if test="saledprice != null" >
+        #{saledprice,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wxsc.bean.DATE_SALED" >
+    update date_saled
+    <set >
+      <if test="saleddate != null" >
+        saledDate = #{saleddate,jdbcType=VARCHAR},
+      </if>
+      <if test="saledquantity != null" >
+        saledQuantity = #{saledquantity,jdbcType=INTEGER},
+      </if>
+      <if test="saledprice != null" >
+        saledPrice = #{saledprice,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wxsc.bean.DATE_SALED" >
+    update date_saled
+    set saledDate = #{saleddate,jdbcType=VARCHAR},
+      saledQuantity = #{saledquantity,jdbcType=INTEGER},
+      saledPrice = #{saledprice,jdbcType=DOUBLE}
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </update>
+</mapper>

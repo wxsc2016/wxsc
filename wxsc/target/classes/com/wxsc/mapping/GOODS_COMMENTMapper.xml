@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxsc.dao.GOODS_COMMENTMapper">
+  <resultMap id="BaseResultMap" type="com.wxsc.bean.GOODS_COMMENT">
+    <id column="goodsId" jdbcType="VARCHAR" property="goodsid" />
+    <result column="custId" jdbcType="VARCHAR" property="custid" /> 
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    goodsId, custId
+  </sql>
+  <sql id="Blob_Column_List">
+    content
+  </sql>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from goods_comment
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from goods_comment
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wxsc.bean.GOODS_COMMENT">
+    insert into goods_comment (goodsId, custId, content
+      )
+    values (#{goodsid,jdbcType=VARCHAR}, #{custid,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+ 
+  <update id="updateByPrimaryKeySelective" parameterType="com.wxsc.bean.GOODS_COMMENT">
+    update goods_comment
+    <set>
+      <if test="custid != null">
+        custId = #{custid,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.wxsc.bean.GOODS_COMMENT">
+    update goods_comment
+    set custId = #{custid,jdbcType=VARCHAR}
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </update>
+
+
+  
+  <insert id="insertSelective" parameterType="com.wxsc.bean.GOODS_COMMENT">
+    insert into goods_comment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="goodsid != null">
+        goodsId,
+      </if>
+      <if test="custid != null">
+        custId,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="goodsid != null">
+        #{goodsid,jdbcType=VARCHAR},
+      </if>
+      <if test="custid != null">
+        #{custid,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+ 
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wxsc.bean.GOODS_COMMENT">
+    update goods_comment
+    set custId = #{custid,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </update>
+ 
+</mapper>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wxsc.dao.GOODS_INFOMapper" >
+  <resultMap id="BaseResultMap" type="com.wxsc.bean.GOODS_INFO" >
+    <id column="goodsId" property="goodsid" jdbcType="VARCHAR" />
+    <result column="goodsName" property="goodsname" jdbcType="VARCHAR" />
+    <result column="goodsprice" property="goodsprice" jdbcType="DOUBLE" />
+     <result column="goodsweight" property="goodsweight" jdbcType="DOUBLE" />
+    <result column="goodsClass" property="goodsclass" jdbcType="VARCHAR" />
+  
+    
+  </resultMap>
+  <sql id="Base_Column_List" >
+    goodsId, goodsName, goodsprice,goodsweight, goodsClass
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from goods_info
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from goods_info
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wxsc.bean.GOODS_INFO" >
+    insert into goods_info (goodsId, goodsName, goodsprice, 
+      goodsClass,goodsweight)
+    values (#{goodsid,jdbcType=VARCHAR}, #{goodsname,jdbcType=VARCHAR}, #{goodsprice,jdbcType=DOUBLE}, 
+     #{goodsclass,jdbcType=VARCHAR}, #{goodsweight,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wxsc.bean.GOODS_INFO" >
+    insert into goods_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="goodsid != null" >
+        goodsId,
+      </if>
+      <if test="goodsname != null" >
+        goodsName,
+      </if>
+      <if test="goodsprice != null" >
+        goodsprice,
+      </if>
+       <if test="goodsweight != null" >
+        goodsweight,
+      </if>
+      <if test="goodsclass != null" >
+        goodsClass
+      </if>    
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="goodsid != null" >
+        #{goodsid,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsname != null" >
+        #{goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsprice != null" >
+        #{goodsprice,jdbcType=DOUBLE},
+      </if>
+        <if test="goodsweight != null" >
+        #{goodsweight,jdbcType=DOUBLE},
+      </if>
+      <if test="goodsclass != null" >
+        #{goodsclass,jdbcType=VARCHAR}
+      </if>      
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.wxsc.bean.GOODS_INFO" >
+    update goods_info
+    <set >
+      <if test="goodsname != null" >
+        goodsName = #{goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsprice != null" >
+        goodsprice = #{goodsprice,jdbcType=DOUBLE},
+      </if>
+      <if test="goodsclass != null" >
+        goodsClass = #{goodsclass,jdbcType=VARCHAR},
+      </if>
+       <if test="goodsweight != null" >
+        goodsweight = #{goodsweight,jdbcType=DOUBLE}
+      </if>
+    </set>
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="updateByPrimaryKey" parameterType="com.wxsc.bean.GOODS_INFO" >
+    update goods_info
+    set goodsName = #{goodsname,jdbcType=VARCHAR},
+      goodsprice = #{goodsprice,jdbcType=DOUBLE},
+      goodsClass = #{goodsclass,jdbcType=VARCHAR},
+      goodsweight = #{goodsweight,jdbcType=DOUBLE} 
+      
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </update>
+  
+  
+  <!--  自己写的方法，dao中的方法名必须跟id一致-->
+  <select id="selectAllByClass" resultMap="BaseResultMap"  parameterType="java.lang.String">
+    select * from goods_info where goodsClass = #{goodsclass,jdbcType=VARCHAR}
+  </select>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</mapper>
