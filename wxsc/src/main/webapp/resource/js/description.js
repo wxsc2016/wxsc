@@ -1,15 +1,15 @@
-function test1(){
+function description(){
 console.log("js方法进入成功");
-var goodsid=document.getElementById("goodsid").innerHTML;
- //url="./testjson?goodsid="+goodsid;
- url="http://localhost:8080/wxsc/test/testjson?goodsid="+goodsid;
+var goodsid=document.getElementById("goodsid2").innerHTML;
+// url="./getDescription?goodsid="+goodsid;
+ url="http://localhost:8080/wxsc/getDescription?goodsid="+goodsid;
 console.log("url="+url);
  $.ajax({
 	 url :url,
 	 type:"get",
 	 dataType:"json",
 	 success:function(data){
-		 console.log("seccess中data已获取");
+		 console.log("后台返回的data已获取");
 		 console.log(data);		
 		 var result=eval(data);
 		 $.each(result, function (index, item) {  

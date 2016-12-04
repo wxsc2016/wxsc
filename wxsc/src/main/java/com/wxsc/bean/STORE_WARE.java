@@ -3,67 +3,36 @@ package com.wxsc.bean;
 import java.util.Date;
 
 public class STORE_WARE {
-    private String goodsid;
+    private String goodsId;
+    private String goodsName;
+    private double strore_num;  
 
-    private Date ordertimestamp;
 
-    private Date arriTimestamp;
+	public String getGoodsName() {
+		return goodsName;
+	}
 
-    private Integer totalnum;
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
+	}
 
-    private Double totalcost;
-    
-    
-    
-    
+	public double getStrore_num() {
+		return strore_num;
+	}
 
-	@Override
-	public String toString() {
-		return "STORE_WARE [goodsid=" + goodsid + ", ordertimestamp=" + ordertimestamp + ", arriTimestamp="
-				+ arriTimestamp + ", totalnum=" + totalnum + ", totalcost=" + totalcost + "]";
+	public void setStrore_num(double strore_num) {
+		this.strore_num = strore_num;
 	}
 
 	public String getGoodsid() {
-		return goodsid;
+		return goodsId;
 	}
 
-	public void setGoodsid(String goodsid) {
-		this.goodsid = goodsid;
+	public void setGoodsid(String goodsId) {
+		this.goodsId = goodsId;
 	}
 
-	public Date getOrdertimestamp() {
-		return ordertimestamp;
-	}
-
-	public void setOrdertimestamp(Date ordertimestamp) {
-		this.ordertimestamp = ordertimestamp;
-	}
-
-	public Date getArriTimestamp() {
-		return arriTimestamp;
-	}
-
-	public void setArriTimestamp(Date arriTimestamp) {
-		this.arriTimestamp = arriTimestamp;
-	}
-
-	public Integer getTotalnum() {
-		return totalnum;
-	}
-
-	public void setTotalnum(Integer totalnum) {
-		this.totalnum = totalnum;
-	}
-
-	public Double getTotalcost() {
-		return totalcost;
-	}
-
-	public void setTotalcost(Double totalcost) {
-		this.totalcost = totalcost;
-	}
-
-
+	
 
    
 }

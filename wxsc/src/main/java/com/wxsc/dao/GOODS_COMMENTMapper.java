@@ -15,5 +15,6 @@ public interface GOODS_COMMENTMapper {
       List< GOODS_COMMENT> selectByPrimaryKey(String goodsid);   
     /**修改商品评论**/
     int updateByPrimaryKeyWithBLOBs(GOODS_COMMENT record);
+    List< GOODS_COMMENT> getCommentById(String goodsid);
 
 }

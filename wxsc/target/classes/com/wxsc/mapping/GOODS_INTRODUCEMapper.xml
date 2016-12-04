@@ -11,6 +11,13 @@
   <sql id="Blob_Column_List">
     introduce
   </sql>
+  <select id="getIntroduceById" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select introduce 
+    from goods_introduce
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </select>
+  
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

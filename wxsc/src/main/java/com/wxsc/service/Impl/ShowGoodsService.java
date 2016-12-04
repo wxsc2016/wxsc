@@ -2,6 +2,7 @@ package com.wxsc.service.Impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -37,25 +38,29 @@ public class ShowGoodsService implements ShowGoodsServiceI {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+/*	*拿到商品价格，单位等信息
+*/	
 	@Override
 	public String getDescription(String goodsId){
-		//拿到商品价格，单位等信息
-		
-		  Gson gson=new Gson();
-		  //得到商品的介绍
-		  String gc=gson.toJson(goods_commentMapper.selectByPrimaryKey(goodsId));
-		  System.out.println(gc);
-		  //得到商品的评论
-		  String gi=gson.toJson(goods_introduceMapper.selectByPrimaryKey(goodsId));
-		  System.out.println(gi);
-
+		   Gson gson=new Gson();
 		  //得到商品的基础信息
-		  String info=gson.toJson(goods_infoMapper.selectByPrimaryKey(goodsId));
-	    String description="\"good_info\":"+info
+		 String  info=gson.toJson(goods_infoMapper.selectByPrimaryKey(goodsId));		
+		 String gi=gson.toJson(goods_introduceMapper.getIntroduceById(goodsId));			 	
+		 GOODS_INTRODUCE gd=goods_introduceMapper.getIntroduceById(goodsId);
+	
+		
+		  //得到商品的评论		  	  
+		  String  gc=gson.toJson(goods_commentMapper.getCommentById(goodsId));			
+		  
+		  //得到商品的介绍
+		  
+		  
+
+		
+	    String description="{\"good_info\":"+info 
 	    		            +",\"introduce\":"+gi
-	    		            +",\"comment\":"+gc;
-	    System.out.println(description);
+	    		            +",\"comment\":"+gc+"}";
+	
 		return description;
 		
 	}

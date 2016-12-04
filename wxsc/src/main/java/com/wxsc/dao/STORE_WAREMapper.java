@@ -13,5 +13,4 @@ public interface STORE_WAREMapper {
 
     int updateByPrimaryKeySelective(STORE_WARE record);
 
-    int updateByPrimaryKey(STORE_WARE record);
 }

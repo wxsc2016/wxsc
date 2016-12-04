@@ -10,6 +10,7 @@ public interface GOODS_INTRODUCEMapper {
     int insertSelective(GOODS_INTRODUCE record);
 
     GOODS_INTRODUCE selectByPrimaryKey(String goodsid);
+    GOODS_INTRODUCE getIntroduceById(String goodsid);
 
     int updateByPrimaryKeySelective(GOODS_INTRODUCE record);
 

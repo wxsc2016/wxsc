@@ -22,9 +22,11 @@ public class TestController {
 	private ShowGoodsServiceI showGoodsService;
     //,method={RequestMethod.GET,RequestMethod.POST}
 	@RequestMapping(value="/testmynew")
-	public String initmytest(){return "test";}
+	public String initmytest()
+	{return "test";}//容器会去路径下寻找test.html文件
 	
-	
+/**	路径为localhost：8080/wxsc/test/testjson?goods_id=
+*/	
 	@RequestMapping(value="/testjson")
     public @ResponseBody  String test(@RequestParam("goodsid")
                          String classid ) {

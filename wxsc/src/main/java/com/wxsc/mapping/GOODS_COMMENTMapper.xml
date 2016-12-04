@@ -12,7 +12,12 @@
   <sql id="Blob_Column_List">
     content
   </sql>
-  
+   <select id="getCommentById" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select  custId
+           ,content
+    from goods_comment
+    where goodsId = #{goodsid,jdbcType=VARCHAR}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

@@ -2,14 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.wxsc.dao.STORE_WAREMapper" >
   <resultMap id="BaseResultMap" type="com.wxsc.bean.STORE_WARE" >
-    <id column="goodsId" property="goodsid" jdbcType="VARCHAR" />
-    <result column="ordertimestamp" property="ordertimestamp" jdbcType="TIMESTAMP" />
-    <result column="arri_timestamp" property="arriTimestamp" jdbcType="TIMESTAMP" />
-    <result column="totalNum" property="totalnum" jdbcType="INTEGER" />
-    <result column="totalCost" property="totalcost" jdbcType="DOUBLE" />
+    <id column="goodsId" property="goodsid" jdbcType="VARCHAR" />   
+    <result column="goodsName" property="goodsName" jdbcType="VARCHAR" />
+    <result column="strore_num" property="strore_num" jdbcType="DOUBLE" />
   </resultMap>
   <sql id="Base_Column_List" >
-    goodsId, ordertimestamp, arri_timestamp, totalNum, totalCost
+    goodsId, goodsName, strore_num
 
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
@@ -23,12 +21,11 @@
     where goodsId = #{goodsid,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.wxsc.bean.STORE_WARE" >
-    insert into store_ware (goodsId, ordertimestamp, arri_timestamp, 
-      totalNum, totalCost
+    insert into store_ware ( goodsId, goodsName, strore_num
 
       )
-    values (#{goodsid,jdbcType=VARCHAR}, #{ordertimestamp,jdbcType=TIMESTAMP}, #{arriTimestamp,jdbcType=TIMESTAMP}, 
-      #{totalnum,jdbcType=INTEGER}, #{totalcost,jdbcType=DOUBLE}
+    values (#{goodsid,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, 
+      #{strore_num,jdbcType=DOUBLE}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.wxsc.bean.STORE_WARE" >
@@ -37,61 +34,38 @@
       <if test="goodsid != null" >
         goodsId,
       </if>
-      <if test="ordertimestamp != null" >
-        ordertimestamp,
+      <if test="goodsName != null" >
+        goodsName,
       </if>
-      <if test="arriTimestamp != null" >
-        arri_timestamp,
+      
+      <if test="strore_num != null" >
+        strore_num,
       </if>
-      <if test="totalnum != null" >
-        totalNum,
-      </if>
-      <if test="totalcost!= null" >
-        totalCost,
-      </if>
+      
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="goodsid != null" >
         #{goodsid,jdbcType=VARCHAR},
       </if>
-      <if test="ordertimestamp != null" >
-        #{ordertimestamp,jdbcType=TIMESTAMP},
-      </if>
-      <if test="arriTimestamp != null" >
-        #{arriTimestamp,jdbcType=TIMESTAMP},
-      </if>
-      <if test="totalnum != null" >
-        #{totalnum,jdbcType=INTEGER},
-      </if>
-      <if test="totalcost!= null" >
-        #{totalcost,jdbcType=DOUBLE},
+      <if test="goodsName != null" >
+        #{goodsName,jdbcType=VARCHAR},
+      </if>   
+      <if test="strore_num != null" >
+        #{strore_num,jdbcType=DOUBLE},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.wxsc.bean.STORE_WARE" >
     update store_ware
     <set >
-      <if test="ordertimestamp != null" >
-        ordertimestamp = #{ordertimestamp,jdbcType=TIMESTAMP},
+       <if test="goodsName != null" >
+        goodsName = #{goodsName,jdbcType=VARCHAR},
       </if>
-      <if test="arriTimestamp != null" >
-        arri_timestamp = #{arriTimestamp,jdbcType=TIMESTAMP},
-      </if>
-      <if test="totalnum != null" >
-        totalNum = #{totalnum,jdbcType=INTEGER},
-      </if>
-      <if test="totalcost!= null" >
-        totalCost = #{totalcost,jdbcType=DOUBLE},
+      <if test="strore_num != null" >
+        strore_num = #{strore_num,jdbcType=DOUBLE},
       </if>
     </set>
     where goodsId = #{goodsid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.wxsc.bean.STORE_WARE" >
-    update store_ware
-    set ordertimestamp = #{ordertimestamp,jdbcType=TIMESTAMP},
-      arri_timestamp = #{arriTimestamp,jdbcType=TIMESTAMP},
-      totalNum = #{totalnum,jdbcType=INTEGER},
-      totalCost = #{totalcost,jdbcType=DOUBLE}
-    where goodsId = #{goodsid,jdbcType=VARCHAR}
-  </update>
+ 
 </mapper>
